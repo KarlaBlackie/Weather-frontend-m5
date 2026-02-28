@@ -1,43 +1,43 @@
 # Weather Frontend M5 - Clima, estadísticas y bienestar.
-## ** Descripción**
+## Descripción
 Aplicación web que combina datos climáticos reales con consejos de salud emocional personalizados para 12 ciudades del mundo. Cada ciudad tiene un mensaje emocional único que se activa al voltear la tarjeta.
 
-## ** Temática**
+## Temática
 Clima + bienestar emocional. Los usuarios ven el clima actual, pronóstico semanal, estadísticas y consejos según el tiempo.
 
 
-## ** Estructura de clases (POO)*
+## Estructura de clases (POO)
 
-- **WeatherApiClient** 
-Responsabilidad: consumir la API de Open-Meteo.
+### WeatherApiClient** 
+**Responsabilidad:** consumir la API de Open-Meteo.
 
-- **Métodos** 
-**async getWeatherData(lat, lon)**: contruye URL con coordenadas y devuelve datos JSON(clima actual + pronóstico 7 días)
+**Métodos** 
+-async getWeatherData(lat, lon)**: construye URL con coordenadas y devuelve datos JSON(clima actual + pronóstico 7 días)
 
-- **WeatherApp(clase principal)** 
-Responsabilidad: lógica de negocio completa.
+### WeatherApp(clase principal)** 
+**Responsabilidad:** lógica de negocio completa.
 
 **Propiedades**:
 
-this.apiClient: Instancia de WeatherApiClient.
-this.ciudades: Array de 12 objetos con id, nombre, lat/lon, imagen y mensaje emocional.
+-this.apiClient: Instancia de WeatherApiClient.
+-this.ciudades: Array de 12 objetos con id, nombre, lat/lon, imagen y mensaje emocional.
 
 
-- **Métodos principales** 
-**async init()**: incializa la app llamando crearTarjetas().
+ **Métodos principales** 
+-async init(): inicializa la app llamando crearTarjetas().
 
-**async crearTarjetas()**: pide datos API por ciudad, genera HTML dinámico con clima actual.
+-async crearTarjetas(): pide datos API por ciudad, genera HTML dinámico con clima actual.
 
-**async seleccionarYMostrar(id)**: muestra detalle con pronóstico, estadísticas y alertas.
+-async seleccionarYMostrar(id): muestra detalle con pronóstico, estadísticas y alertas.
 
-**getClimaInfo(code)**: traduce códigos weathercode de Open-Meteo a estados e íconos Bootstrap Icons.
+-getClimaInfo(code): traduce códigos weathercode de Open-Meteo a estados e íconos Bootstrap Icons.
 
-**calcularEstadisticas(daily)**:calcula min/max/promedio semanal + días soleados/ lluviosos + alertas.
+-calcularEstadisticas(daily):calcula min/max/promedio semanal + días soleados/ lluviosos + alertas.
 
 
-- **API de cluma utilizada**
-**Nombre**: Open_meteo Weather Forescast Api(gratuita, sin clave API)
-**URL base**: https://api.open-meteo.com/v1/forescast
+## API de cluma utilizada
+**Nombre**: Open_meteo Weather Forescast API(gratuita, sin clave API)
+**URL base**: https://api.open-meteo.com/v1/forecast
 
 **Parámetros usados**:
 latitude, longitude (coordenadas)
@@ -48,13 +48,13 @@ daily=temperature_2m_max,temperature_2m_min,weathercode (pronóstico semanal) ti
 
 **Datos procesados**:
 
-current_weather.weatehrcode,current_weather.temperature.
+current_weather.weathercode,current_weather.temperature.
 
 daily.weathercode[], daily.temperature_2m_min[],daily.temperature_2m_max[].
 
 
 
-## **Cálculo de estadístcias**
+## Cálculo de estadísticas
 
 - **Entrada**: daily de Open-Meteo(arrays de 7 días)
 
@@ -66,17 +66,17 @@ diasSoleados: codes.filter(c => c === 0).length (despejado)
 diasLluviosos: codes.filter (c => c >= 51 && c <= 67).length (lluvia)
 
 
-- **Alertas**(reglas simples)
+ **Alertas**(reglas simples)
 
-- **maxSemanal > 30:** "Alerta de calor"(alert-danger).
+- maxSemanal > 30: "Alerta de calor"(alert-danger).
 
-- **diasLluviosos >=3:** "Semana lluviosa"(alert-warning).
+- diasLluviosos >=3: "Semana lluviosa"(alert-warning).
 
--**Default**: "Condiciones estables" (alert-success)
+-Default: "Condiciones estables" (alert-success)
 
 
 
-## **Funcionalidades**
+## Funcionalidades
 
 **Home(12 ciudades)**
 -Tarjetas glassmorphism con flip 3D (girarTarjeta()).
@@ -89,6 +89,7 @@ diasLluviosos: codes.filter (c => c >= 51 && c <= 67).length (lluvia)
   ## **Detalle**  
   -Imagen, clima actual, mensaje emocional.
   -Pronóstico 7 días (nombre día + min/max + estado)
+
   **Análisis semanal**
 
   Mín: X°C | Máx: Y°C | Promedio : Z°C
@@ -98,11 +99,11 @@ diasLluviosos: codes.filter (c => c >= 51 && c <= 67).length (lluvia)
   **Alertas** dinámicas con Bootstrap badges.
 
 
-  ## **Navegación SPA**
+  ## Navegación SPA
   Botón "Volver" + navbar "Home" => volverInicio().
   Sin recargas, solo DOM manipulation.
 
-  **Tecnologías**
+  ##Tecnologías
   HTML + Bootstrap 5.3.3(responsive grid, navbar, cards)
 
   JavaScript ES6 (clases, async/await, template literals, arrow functions)
@@ -113,14 +114,11 @@ diasLluviosos: codes.filter (c => c >= 51 && c <= 67).length (lluvia)
 
 
 
-
-
-## **Commits**
+## Commits
 Commits descriptivos incluídos.
 
 
-
-## ++Enlace al repositorio público**
+## Enlace al repositorio público
 [Ver repositorio completo] https://github.com/KarlaBlackie/Weather-frontend-m5
 
 **Desarrollado por Karla Jara Mena**
