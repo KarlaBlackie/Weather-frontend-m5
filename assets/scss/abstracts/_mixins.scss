@@ -1,0 +1,25 @@
+//Mixin contenedor 3D tarjeta
+
+@mixin card-3d-setup {
+    perspective: 1000px;
+    &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+    }
+
+}
+
+//Mixins breakpoints
+
+@mixin responsive($device) {
+    @if $device == "mobile" {
+        @media (max-width: 420px) {@content; }
+    }
+
+    @if $device == "desktop" {
+        @media (min-width: 1024px) {@content;}
+    }
+}

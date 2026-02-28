@@ -1,0 +1,27 @@
+.theme-cold {
+    background: linear-gradient(to bottom, #a1c4fd 0%, #c2e9fb 100%);
+    color: $dark-bg;
+
+    .weather-card__back {
+    background-color: darken(#5d9cec, 5%);
+    }
+
+    .weather-card__button {
+        color: #5d9cec;
+    }
+}
+
+
+.theme-hot {
+    background: linear-gradient(to bottom, #ff9a9e 0%, #fecfef 100%);
+    color: #7a1d1d;
+
+    .weather-card__back {
+        background-color: #ff6b6b;
+
+    }
+
+    .weather-card__button {
+        color: #ff6b6b;
+    }
+}

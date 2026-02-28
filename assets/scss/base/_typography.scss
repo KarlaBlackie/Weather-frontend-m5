@@ -1,0 +1,30 @@
+body {
+    font-family: $font-main !important;
+    color: $dark-bg;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: darken($dark-bg, 10%);
+}
+
+p {
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.weather-card__message {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.text-muted {
+    color: $secondary-color !important;
+}
+
+.weather-card__temp {
+    font-weight: 800;
+    letter-spacing: -1px;
+}

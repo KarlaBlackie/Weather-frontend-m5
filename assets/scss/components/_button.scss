@@ -1,0 +1,64 @@
+%btn-base {
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items:center;
+    justify-content: center;
+
+    &:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    &:active {
+        transform: translateY(-1px) scale(0.98);
+    }
+}
+
+
+.weather-card__button {
+    @extend %btn-base;
+    background-color: #ffdab9 !important;
+    color: #000 !important;
+    
+
+    &:hover {
+        background-color: #00ffff !important;
+        color: #000 !important;
+    }
+
+    &:active {
+        background-color: #00ced1 !important;
+    }
+}
+
+ 
+.detail-view__back-btn {
+    @extend %btn-base;
+    background-color: #ffdab9 !important; 
+    color: #333 !important;
+    gap: 0.5rem;
+
+
+    &:hover {
+        background-color: #00ffff !important;
+         color: #000 !important;
+         transform: translateX(-5px);
+    }
+
+    &:active {
+        background-color: #00ced1 !important;
+        transform: scale(0.95) !important;
+        
+    }
+    
+    @include responsive("mobile") {
+        width: 100%;
+    }
+       
+}

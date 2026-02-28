@@ -1,0 +1,27 @@
+body {
+    font-family: $font-main;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primary-color;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    object-fit: cover;
+}
