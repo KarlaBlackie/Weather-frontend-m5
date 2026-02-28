@@ -8,13 +8,13 @@ Clima + bienestar emocional. Los usuarios ven el clima actual, pronóstico seman
 
 ## Estructura de clases (POO)
 
-### WeatherApiClient** 
+### WeatherApiClient
 **Responsabilidad:** consumir la API de Open-Meteo.
 
 **Métodos** 
--async getWeatherData(lat, lon)**: construye URL con coordenadas y devuelve datos JSON(clima actual + pronóstico 7 días)
+async getWeatherData(lat, lon): construye URL con coordenadas y devuelve datos JSON(clima actual + pronóstico 7 días)
 
-### WeatherApp(clase principal)** 
+### WeatherApp(clase principal) 
 **Responsabilidad:** lógica de negocio completa.
 
 **Propiedades**:
@@ -35,8 +35,8 @@ Clima + bienestar emocional. Los usuarios ven el clima actual, pronóstico seman
 -calcularEstadisticas(daily):calcula min/max/promedio semanal + días soleados/ lluviosos + alertas.
 
 
-## API de cluma utilizada
-**Nombre**: Open_meteo Weather Forescast API(gratuita, sin clave API)
+## API de clima utilizada
+**Nombre**: Open-meteo Weather Forescast API(gratuita, sin clave API)
 **URL base**: https://api.open-meteo.com/v1/forecast
 
 **Parámetros usados**:
